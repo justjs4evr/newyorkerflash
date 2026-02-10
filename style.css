@@ -368,3 +368,56 @@ body {
 
 /* Logic for clicked links (Story page adjustments) */
 /* Ensure the "Flash Fiction" rubric on story page acts as a back link if desired, or just static */
+
+/* --- Split Hero (Story Page) --- */
+.hero-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    text-align: left;
+    /* Override centered default */
+    margin-bottom: 4rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    mix-blend-mode: normal;
+    /* Override any blend modes */
+    filter: none;
+    /* Override sepia filter */
+}
+
+/* Override meta alignment for split hero */
+.hero-split .story-meta {
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .hero-split {
+        flex-direction: column-reverse;
+        /* Usually easier on mobile to have title then text, or image then text */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-image {
+        max-width: 100%;
+    }
+
+    .hero-split .story-meta {
+        align-items: center;
+    }
+}

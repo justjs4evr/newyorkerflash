@@ -1,0 +1,370 @@
+/* Global Reset & Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #FAFAF9;
+    /* Pale Cream */
+    --text-color: #121212;
+    /* Deep Charcoal */
+    --accent-color: #DF3326;
+    /* New Yorker Red */
+    --font-headline: 'Playfair Display', serif;
+    --font-body: 'EB Garamond', serif;
+    --font-ui: 'Montserrat', sans-serif;
+    --max-width: 700px;
+    --spacing-unit: 1rem;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 18px;
+    /* High readability */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+.site-header {
+    width: 100%;
+    padding: 2rem 1rem;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    text-align: center;
+}
+
+.logo {
+    margin: 0;
+    line-height: 0;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Story Container */
+.story-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 4rem 1.5rem 8rem;
+}
+
+/* Story Header */
+.story-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.rubric {
+    font-family: var(--font-ui);
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.story-title {
+    font-family: var(--font-headline);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.story-meta {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.byline {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #121212;
+}
+
+.author {
+    font-weight: 600;
+}
+
+.story-date {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #777;
+}
+
+/* Illustration */
+.story-illustration {
+    margin: 3rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.story-illustration img {
+    max-width: 100%;
+    height: auto;
+    /* mix-blend-mode: multiply; /* Helps sketches blend if the bg isn't perfect white */
+    filter: sepia(10%) contrast(110%);
+    /* Slight aging effect */
+}
+
+/* Story Body */
+.story-body {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    /* ~20px for body text */
+}
+
+.story-body p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    /* Classic print feel */
+}
+
+.story-body p:first-of-type::first-letter {
+    float: left;
+    font-family: var(--font-headline);
+    font-size: 5rem;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    margin-top: 0.2rem;
+    color: #000;
+}
+
+/* Notification Box Styling */
+.notification-box {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.notification-box p {
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 3rem 0;
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* ... existing styles ... */
+
+/* --- Hub Page Specific Styles --- */
+
+.hub-page {
+    background-color: #fff;
+    /* Hub is usually cleaner/white */
+}
+
+/* Hub Header */
+.hub-header {
+    border-bottom: 1px solid #000;
+    padding: 0;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+}
+
+.header-left span {
+    font-weight: 700;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 600;
+}
+
+.header-right a {
+    text-decoration: none;
+    color: #000;
+}
+
+.subscribe-btn {
+    background-color: #2b9bf4;
+    /* Approximate NY blue */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+.logo-container h1 {
+    font-size: 2.5rem;
+    /* Slightly smaller in header */
+}
+
+
+/* Main Nav */
+.main-nav {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #000;
+    padding: 0.8rem 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #000;
+    font-family: var(--font-ui);
+    /* Montserrat or similar sans */
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Hub Hero */
+.hub-hero {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hub-title {
+    font-family: var(--font-ui);
+    /* Often Futura or similar geometric sans on hub */
+    font-weight: 500;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    /* As per reference image, thin/light */
+}
+
+.hub-subtitle {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #555;
+}
+
+/* Story Grid */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Single column stack */
+    gap: 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem 4rem;
+}
+
+.story-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.story-card-content {
+    flex: 1;
+}
+
+.story-card-title {
+    font-family: var(--font-headline);
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.story-card-title a {
+    text-decoration: none;
+    color: #000;
+}
+
+.story-card-excerpt {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.story-card-meta {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: #777;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.story-card-meta .byline {
+    font-size: 0.8rem;
+    font-style: normal;
+    color: #000;
+    font-weight: 700;
+}
+
+.story-card-image {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.story-card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Logic for clicked links (Story page adjustments) */
+/* Ensure the "Flash Fiction" rubric on story page acts as a back link if desired, or just static */
